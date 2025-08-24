@@ -6,11 +6,12 @@
   "scripts": {
     "dev": "nodemon src/index.js"
   },
-  
+
   "keywords": [
     "javascript",
     "backend"
   ],
+  
   "author": "mahipal chauhan",
   "license": "ISC",
   "description": "",

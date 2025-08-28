@@ -1,26 +1,13 @@
 //require('dotenv').config({path:'./env'})
 import dotenv from "dotenv"
-import express from "express"
-import cors from "cors"
-import cookieParser from "cookie-parser";
+import {app} from "./app.js"
 
 import connectDB from "./db/index.js";
-const app=express()
+
 
 dotenv.config({
 path:'./env'
 })
-
-app.use(cors({
-    origin:process.env.CORS_ORIGIN,
-    credentials:true
-}
-))
-
-app.use(express.json({ limit:"20kb"}))
-app.use(express.urlencoded({extended:true,limit:"20kb"}))
-app.use(express.static("public"))
-app.use(cookieParser())
 
 
 connectDB()
@@ -33,7 +20,7 @@ connectDB()
     console.log("mongo db fail!!");
 })
 
-/*
+/* 
 ;(async ()=>{
     try {
     await mongoose.connect(`${process.env.MONGODB_URL}/${DB_NAME}`)        
@@ -51,3 +38,6 @@ connectDB()
         throw err
     }
 })() */
+
+
+    
